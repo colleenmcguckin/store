@@ -1,0 +1,17 @@
+
+<div class="row">
+  <% @products.each do |product| %> 
+    <div class="col-md-4">
+      <div class="product">
+        <a href="/products/<%= product.id %>"><h3><%= product.name %></h3></a>
+        <h4>$<%= product.price %></h4>
+        <p> <%= product.description %> </p>
+    <!--     <img src= "<%= product.image %>" />
+     -->  
+        <%= image_tag product.image, width: 300 %> 
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<!-- <%= link_to "Google", "http://google.com" %> -->
