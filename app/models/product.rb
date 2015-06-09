@@ -1,5 +1,9 @@
 class Product < ActiveRecord::Base
 
+  belongs_to :supplier #must be singular!!! SUPPLIER!!!!
+  has_many :images
+  
+
   SALES_TAX = 0.09
 
   def sale_message

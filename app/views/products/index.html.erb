@@ -6,9 +6,8 @@
         <a href="/products/<%= product.id %>"><h3><%= product.name %></h3></a>
         <h4>$<%= product.price %></h4>
         <p> <%= product.description %> </p>
-    <!--     <img src= "<%= product.image %>" />
-     -->  
-        <%= image_tag product.image, width: 300 %> 
+
+        <%= image_tag product.images.first.image_url, width: 300 %> 
       </div>
     </div>
   <% end %>

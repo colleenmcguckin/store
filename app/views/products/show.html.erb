@@ -5,9 +5,13 @@
 <h4> <%= @product.sale_message %></h4>
 <h5> <%= @product.pay_tax %> </h5>
 <h5> <%= @product.total_cost %> </h5>
+<h5> Country of Origin: <%= @product.supplier.name %> </h5>
 <p> <%= @product.description %> </p>
-<img src= "<%= @product.image %>" />
-<!-- <h4><a href= "/products/<%= @product_id %>/edit" >Edit This Product</h4> -->
+
+<% @product.images.each do |image| %> 
+  <%= image_tag image.image_url, width: 300 %> 
+<% end %>
+
 <h4><%= link_to "Edit This Product", "/products/#{@product.id}/edit" %></h4>
 <h4><%= link_to "Delete This Product", "/products/#{@product.id}", method: :delete %></h4>
 
