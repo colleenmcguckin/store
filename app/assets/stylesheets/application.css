@@ -26,26 +26,33 @@ img {
 }
 
 body {
-  background-image: url("congruent_outline.png");
+  background-image: url("polonez_car.png");
   font-family: "Rockwell Extra Bold","Rockwell Bold",monospace;
 }
 
 h4 {
-  color:white;
+  color:#ca1cdd;
 }
 
 p {
-  color:white;
+  color:#ca1cdd;
 }
 
 h1 {
-  color:white;
+  color:#ca1cdd;
 }
 
 h5 {
-  color:white;
+  color:#ca1cdd;
 }
 
 h3 {
-  color:white;
+  color:#ca1cdd;
+}
+
+h2{
+  color:#ca1cdd;
+}
+.field{
+  color:#ca1cdd;
 }
