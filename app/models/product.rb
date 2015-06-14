@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
   belongs_to :supplier #must be singular!!! SUPPLIER!!!!
   has_many :images
   has_many :orders
+  has_many :categorized_products
   
 
   SALES_TAX = 0.09

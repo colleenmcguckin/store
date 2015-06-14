@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610023515) do
+ActiveRecord::Schema.define(version: 20150614183145) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "categorized_products", force: :cascade do |t|
+    t.integer  "product_id",  limit: 4
+    t.integer  "category_id", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "images", force: :cascade do |t|
     t.string   "product_id", limit: 255
@@ -21,15 +34,15 @@ ActiveRecord::Schema.define(version: 20150610023515) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "quantity",    limit: 4
+    t.decimal  "quantity",              precision: 11
     t.integer  "product_id",  limit: 4
     t.integer  "user_id",     limit: 4
-    t.decimal  "total_price",           precision: 8, scale: 2
+    t.decimal  "total_price",           precision: 8,  scale: 2
     t.boolean  "status",      limit: 1
-    t.decimal  "tax",                   precision: 8, scale: 2
-    t.decimal  "subtotal",              precision: 8, scale: 2
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.decimal  "tax",                   precision: 8,  scale: 2
+    t.decimal  "subtotal",              precision: 8,  scale: 2
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
   create_table "products", force: :cascade do |t|
