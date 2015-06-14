@@ -26,7 +26,7 @@ img {
 }
 
 body {
-  background-image: url("polonez_car.png");
+  background-image: image-url("polonez_car.png");
   font-family: "Rockwell Extra Bold","Rockwell Bold",monospace;
 }
 
