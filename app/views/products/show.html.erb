@@ -16,7 +16,7 @@
 <h4> <%= @product.sale_message %></h4>
 <h5> <%= @product.pay_tax %> </h5>
 <h5> <%= @product.total_cost %> </h5>
-<h5> Country of Origin: <%= @product.supplier.name %> </h5>
+<h5> Country of Origin: <%= @product.supplier.name if supplier.name %> </h5>
 <p> <%= @product.description %> </p>
 
 <% @product.images.each do |image| %> 
