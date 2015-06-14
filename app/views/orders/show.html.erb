@@ -1,0 +1,7 @@
+<h1>Thank you for your MF order!</h1>
+<h3>Details: </h3>
+<h3>Confirmatioin Number: <%= @orders.id %></h3>
+<h4>Order Quantity <%= @orders.quantity %></h4>
+<h4>Subtotal: <%= number_to_currency(@orders.subtotal) %></h4>
+<h4>Tax: <%= number_to_currency(@orders.tax) %></h4>
+<h4>Total: <%= number_to_currency(@orders.total_price) %></h4>

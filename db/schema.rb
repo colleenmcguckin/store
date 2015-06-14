@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610005259) do
+ActiveRecord::Schema.define(version: 20150610023515) do
 
   create_table "images", force: :cascade do |t|
     t.string   "product_id", limit: 255
     t.text     "image_url",  limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "quantity",    limit: 4
+    t.integer  "product_id",  limit: 4
+    t.integer  "user_id",     limit: 4
+    t.decimal  "total_price",           precision: 8, scale: 2
+    t.boolean  "status",      limit: 1
+    t.decimal  "tax",                   precision: 8, scale: 2
+    t.decimal  "subtotal",              precision: 8, scale: 2
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   create_table "products", force: :cascade do |t|

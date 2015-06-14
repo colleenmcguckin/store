@@ -4,10 +4,10 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :quantity
       t.integer :product_id
       t.integer :user_id
-      t.decimal{8, 2} :total_price
+      t.decimal :total_price, precision: 8, scale: 2
       t.boolean :status
-      t.decimal{8, 2} :tax
-      t.decimal{8, 2} :subtotal
+      t.decimal :tax, precision: 8, scale: 2
+      t.decimal :subtotal, precision: 8, scale: 2
 
       t.timestamps null: false
     end

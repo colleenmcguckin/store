@@ -24,7 +24,6 @@ class ProductsController < ApplicationController
       product = Product.order("RAND()").first
       redirect_to "/products/#{product.id}"
     end
-
   end
 
   def new
@@ -35,8 +34,7 @@ class ProductsController < ApplicationController
     @product = Product.create(name: params[:name], price: params[:price], image: params[:image], description: params[:description])
     redirect_to "/products/#{@product.id}"
     flash[:success] = "Product Added!"
-
-
+    
   end
 
   def edit
