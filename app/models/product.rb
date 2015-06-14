@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
   has_many :images
   has_many :orders
   has_many :categorized_products
+  has_many :categories, through: :categorized_products
   
 
   SALES_TAX = 0.09

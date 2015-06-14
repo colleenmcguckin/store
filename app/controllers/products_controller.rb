@@ -14,7 +14,9 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
-
+    if params[:category]
+      @products = Category.find_by(name: params[:category]).products
+    end
   end
 
   def show
