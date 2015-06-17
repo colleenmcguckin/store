@@ -1,0 +1,14 @@
+<% @items.each do |item| %>
+  <h3>Item: <%= item.product.name %></h3>
+  <h4>Quantity: <%= item.quantity %></h4>
+  <h4>Unit Price: <%= item.product.price %></h4>
+  
+  <h4><%= link_to "Remove From Cart?", "/cart/#{item.id}", method: :delete %></h4>
+
+<% end %>
+</br>
+<h4> <%= form_tag '/orders', method: :post do %>
+<%= submit_tag "Buy Now!" %>
+<% end %>
+
+<h4>Cart Total: </h4>

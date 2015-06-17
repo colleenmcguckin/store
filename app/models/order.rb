@@ -1,11 +1,14 @@
 class Order < ActiveRecord::Base
-  belongs_to :product
   belongs_to :user 
+  has_many :carted_products
+  has_many :products, through: :carted_products
+
 
   SALES_TAX = 0.09
-  def calculate_subtotal(price)
-    quantity * price
-  end
+
+
+
+ 
 
   def calculate_tax(price)
     quantity * price * SALES_TAX

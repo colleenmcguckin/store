@@ -1,6 +1,6 @@
 <h1> THIS PRODUCT IS THE BEST!!!!!!! </h1>
 
-<%= form_tag '/orders', method: :post do %>
+<%= form_tag '/cart', method: :post do %>
   <div>
     <%= label_tag :quantity, "How many do you want?" %>
     <%= text_field_tag :quantity %>
@@ -8,7 +8,7 @@
    <div>
     <%= hidden_field_tag :product_id, @product.id %>
   </div>
-  <%= submit_tag "Buy Now!" %>
+  <%= submit_tag "Add To Cart!" %>
 <% end %>
 
 <h3><%= @product.name %></h3>
@@ -16,8 +16,10 @@
 <h4> <%= @product.sale_message %></h4>
 <h5> <%= @product.pay_tax %> </h5>
 <h5> <%= @product.total_cost %> </h5>
-<h5> Country of Origin: <%= @product.supplier.name if supplier.name %> </h5>
+<h5> Country of Origin: <%= @product.supplier.name %> </h5>
 <p> <%= @product.description %> </p>
+
+
 
 <% @product.images.each do |image| %> 
   <%= image_tag image.image_url, width: 300 %> 
